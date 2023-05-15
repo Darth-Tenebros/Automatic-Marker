@@ -7,7 +7,7 @@ this automatic marker has a focus on the correctness of output by student submis
 
 
 # Marking
-
+**there is a branch: `tutorial-branch` with a fully configured example**
 instructions on setup of the AM to mark an assignment
 ### setting up the `marking_scheme.json`
 each file expected to be in an assignment will be defined in `marking_scheme.json` as follows:
@@ -68,3 +68,4 @@ this project has been programmed to work in both windows and *nix systems but at
         <td><a href="https://github.com/Darth-Tenebros">Github</a></td>
     </tr>
  </table>
+ 
