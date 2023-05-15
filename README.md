@@ -37,6 +37,8 @@ to generate the trial_expected_output [see](/generate_expected/README.md)
 
 each student's submission should be in a folder with named with the student's student_number and all submissions should then be put in the `assignments directory`.
 
+**make sure to delete the .gitkeep file in the assignments folder!!**
+
 after all setup is done, find `main.py` in the root directory of this project and run it. reports will be produced in each student's folder.
 
 # Note:
