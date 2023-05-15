@@ -1,16 +1,32 @@
 {
-    "": {
+    "commission": {
         "file_names": [
-            
+            "commission.py"
         ],
         "function_names": {
-            
+            "commission_calculator": 5
         },
         "trials": {
             "trial_1" : {
-                "trial_input": ,
-                "trial_expected_output": ,
-                "mark": 
+                "trial_input": ["1000","10"],
+                "trial_expected_output": "What is the total amount?\nWhat is the percentage of commission policy? [%]\nThe total commission is: R100.00",
+                "mark": 10
+            }
+        }
+    },
+    "margin": {
+        "file_names": [
+            "margin.py"
+        ],
+        "function_names": {
+            "calculate_selling_price_with_VAT": 5,
+            "get_margin_amount": 5
+        },
+        "trials": {
+            "trial_1" : {
+                "trial_input": ["80", "25", "15"],
+                "trial_expected_output": "What is the total amount?\nWhat is the profit margin to add? [%]\nWhat is the VAT percentage? [%]\nThe selling price with tax is: R115.00",
+                "mark": 10
             }
         }
     }

@@ -1,0 +1,7 @@
+LICENSE
+README.md
+setup.py
+Automatic_marker.egg-info/PKG-INFO
+Automatic_marker.egg-info/SOURCES.txt
+Automatic_marker.egg-info/dependency_links.txt
+Automatic_marker.egg-info/top_level.txt

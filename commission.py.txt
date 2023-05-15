@@ -1,0 +1,1 @@
+'What is the total amount?\nWhat is the percentage of commission policy? [%]\nThe total commission is: R100.00'

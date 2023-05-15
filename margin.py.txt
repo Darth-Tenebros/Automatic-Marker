@@ -1,0 +1,1 @@
+'What is the total amount?\nWhat is the profit margin to add? [%]\nWhat is the VAT percentage? [%]'
