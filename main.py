@@ -31,3 +31,26 @@ def get_trials(json_data: Dict[str, Dict]) -> Tuple[List[str], List[str], Dict[s
     
     return trial_inputs, expected_outputs, expected_functions
 
+
+def totalise_function_marks(student_functions: List[str], func_dict: Dict[str, int]) -> int:
+    """calculates the marks for the functions the student has defined
+
+    Parameters
+    ----------
+    student_functions: List[str]
+        a list containing all the functions the student has defined in a module
+    func_dict: Dict[str, int]
+        a dictionary with the functions expected to have been defined with their assosciated marks
+    
+    Returns
+    -------
+    int
+        the total marks for the defined functions
+    """
+
+    mark = 0
+    
+    for func in student_functions:
+        if func in func_dict.keys():
+            mark += func_dict[func]
+    return mark
