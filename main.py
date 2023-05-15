@@ -107,3 +107,44 @@ def run_trial(each_program: str, trials: List[str], path_to_each_student: str,\
             report(message, 0, path_to_each_student, delimeter)
         
     return mark
+
+def main() -> None:
+    DIR_DELIMETER = '/'
+    if platform.system() == "Windows":
+        DIR_DELIMETER = '\\'
+
+    # fetch marking data
+    with open('marking_scheme.json', 'r') as marking_data:
+        marking_file = json.load(marking_data)
+
+    file_names = marking_file.keys()
+    root_dir = os.getcwd() + f"{DIR_DELIMETER}assignments"
+    student_numbers = get_student_numbers(root_dir)
+
+    for each_student in student_numbers:
+        mark = 0
+
+        files_in_student_dir = get_all_files_in_dir(root_dir, each_student, DIR_DELIMETER)
+        path_to_each_student = f"{root_dir}{DIR_DELIMETER}{each_student}"
+
+        for each_program in file_names:
+            path_to_program = f"{root_dir}{DIR_DELIMETER}{each_student}{DIR_DELIMETER}{each_program}.py"
+
+            if check_syntax(path_to_program):
+                trials, trial_outputs, expected_functions = get_trials(marking_file[each_program])
+                student_defined_functions = check_function_existence(path_to_program, expected_functions)
+                mark += totalise_function_marks(student_defined_functions, expected_functions)
+
+                if each_program+'.py' in files_in_student_dir and each_program in file_names:
+                    mark += run_trial(each_program, trials, path_to_each_student, marking_file, trial_outputs, DIR_DELIMETER)
+
+                else:
+                    report(f"file {each_program}.py not found", 0,  path_to_each_student, DIR_DELIMETER)
+            else:
+                report(f'file {each_program}.py has syntax errors', 0, path_to_each_student, DIR_DELIMETER)
+
+        report("mark for assignment: ", mark, path_to_each_student, DIR_DELIMETER)
+
+
+if __name__ == '__main__':
+    main()
